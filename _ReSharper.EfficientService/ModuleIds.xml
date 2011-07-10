@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5" ModuleId="EfficientService.Core" />
+  <Module PersistentId="3B6559B7-3620-402C-8FF6-276D7E584B10" ModuleId="EfficientService" />
+  <Module PersistentId="68768F95-0C8C-4909-A8C5-81D6C1C70149" ModuleId="ConsoleTest" />
+</Modules>

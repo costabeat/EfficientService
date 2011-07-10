@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EsModelStoreContainer">
+    <EntitySet Name="IncidentSet" EntityType="EsModel.Store.IncidentSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ContactSet" EntityType="EsModel.Store.ContactSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AssigneeGroupSet" EntityType="EsModel.Store.AssigneeGroupSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="EsModel.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanySet" EntityType="EsModel.Store.CompanySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArticleSet" EntityType="EsModel.Store.ArticleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArticleCategorySet" EntityType="EsModel.Store.ArticleCategorySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RoleSet" EntityType="EsModel.Store.RoleSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserRolesSet" EntityType="EsModel.Store.UserRolesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IncidentTypeSet" EntityType="EsModel.Store.IncidentTypeSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="IncidentContact" Association="EsModel.Store.IncidentContact">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <AssociationSet Name="IncidentContact1" Association="EsModel.Store.IncidentContact1">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <AssociationSet Name="IncidentAssigneeGroup" Association="EsModel.Store.IncidentAssigneeGroup">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="AssigneeGroup" EntitySet="AssigneeGroupSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserContact" Association="EsModel.Store.UserContact">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <AssociationSet Name="IncidentArticle" Association="EsModel.Store.IncidentArticle">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="Article" EntitySet="ArticleSet" />
+    </AssociationSet>
+    <AssociationSet Name="ArticleCategoryArticleCategory" Association="EsModel.Store.ArticleCategoryArticleCategory">
+      <End Role="ArticleCategory" EntitySet="ArticleCategorySet" />
+      <End Role="ArticleCategory1" EntitySet="ArticleCategorySet" />
+    </AssociationSet>
+    <AssociationSet Name="ArticleArticleCategory" Association="EsModel.Store.ArticleArticleCategory">
+      <End Role="Article" EntitySet="ArticleSet" />
+      <End Role="ArticleCategory" EntitySet="ArticleCategorySet" />
+    </AssociationSet>
+    <AssociationSet Name="UserRolesUser" Association="EsModel.Store.UserRolesUser">
+      <End Role="UserRoles" EntitySet="UserRolesSet" />
+      <End Role="User" EntitySet="UserSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserRolesRole" Association="EsModel.Store.UserRolesRole">
+      <End Role="UserRoles" EntitySet="UserRolesSet" />
+      <End Role="Role" EntitySet="RoleSet" />
+    </AssociationSet>
+    <AssociationSet Name="ContactAssigneeGroup" Association="EsModel.Store.ContactAssigneeGroup">
+      <End Role="Contact" EntitySet="ContactSet" />
+      <End Role="AssigneeGroup" EntitySet="AssigneeGroupSet" />
+    </AssociationSet>
+    <AssociationSet Name="IncidentIncidentType" Association="EsModel.Store.IncidentIncidentType">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="IncidentType" EntitySet="IncidentTypeSet" />
+    </AssociationSet>
+    <AssociationSet Name="AssigneeGroupCompany" Association="EsModel.Store.AssigneeGroupCompany">
+      <End Role="AssigneeGroup" EntitySet="AssigneeGroupSet" />
+      <End Role="Company" EntitySet="CompanySet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="IncidentSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Priority" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="Status" Type="int" Nullable="false" DefaultValue="2" />
+    <Property Name="ReportedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="ResolveDate" Type="datetime" Nullable="true" />
+    <Property Name="Contract" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Cost" Type="decimal" Nullable="false" DefaultValue="0" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TargetDate" Type="datetime" Nullable="true" />
+    <Property Name="Customer_Id" Type="int" Nullable="false" />
+    <Property Name="Assignee_Id" Type="int" Nullable="true" />
+    <Property Name="AssigneeGroup_Id" Type="int" Nullable="true" />
+    <Property Name="AssociatedArticle_Id" Type="int" Nullable="true" />
+    <Property Name="Type_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ContactSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="128" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Jabber" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Post" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="AssigneeGroup_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AssigneeGroupSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Company_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPassChangeDate" Type="datetime" Nullable="false" />
+    <Property Name="CreationDate" Type="datetime" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" DefaultValue="false" />
+    <Property Name="LastLockedOutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPassAttemptCount" Type="int" Nullable="false" DefaultValue="0" />
+    <Property Name="FailedPassAttemptDate" Type="datetime" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Contact_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="CompanySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArticleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Problem" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Solution" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tags" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="ArticleCategory_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ArticleCategorySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ParentCategory_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="RoleSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserRolesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Role_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IncidentTypeSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Difficulty" Type="int" Nullable="false" DefaultValue="100" />
+  </EntityType>
+  <Association Name="IncidentContact">
+    <End Role="Incident" Type="EsModel.Store.IncidentSet" Multiplicity="*" />
+    <End Role="Contact" Type="EsModel.Store.ContactSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="Customer_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IncidentContact1">
+    <End Role="Incident" Type="EsModel.Store.IncidentSet" Multiplicity="*" />
+    <End Role="Contact" Type="EsModel.Store.ContactSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="Assignee_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IncidentAssigneeGroup">
+    <End Role="Incident" Type="EsModel.Store.IncidentSet" Multiplicity="*" />
+    <End Role="AssigneeGroup" Type="EsModel.Store.AssigneeGroupSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="AssigneeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="AssigneeGroup_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserContact">
+    <End Role="User" Type="EsModel.Store.UserSet" Multiplicity="*" />
+    <End Role="Contact" Type="EsModel.Store.ContactSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Contact_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IncidentArticle">
+    <End Role="Incident" Type="EsModel.Store.IncidentSet" Multiplicity="*" />
+    <End Role="Article" Type="EsModel.Store.ArticleSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="AssociatedArticle_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticleCategoryArticleCategory">
+    <End Role="ArticleCategory" Type="EsModel.Store.ArticleCategorySet" Multiplicity="*" />
+    <End Role="ArticleCategory1" Type="EsModel.Store.ArticleCategorySet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ArticleCategory1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ArticleCategory">
+        <PropertyRef Name="ParentCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ArticleArticleCategory">
+    <End Role="Article" Type="EsModel.Store.ArticleSet" Multiplicity="*" />
+    <End Role="ArticleCategory" Type="EsModel.Store.ArticleCategorySet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ArticleCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="ArticleCategory_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRolesUser">
+    <End Role="UserRoles" Type="EsModel.Store.UserRolesSet" Multiplicity="*" />
+    <End Role="User" Type="EsModel.Store.UserSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRolesRole">
+    <End Role="UserRoles" Type="EsModel.Store.UserRolesSet" Multiplicity="*" />
+    <End Role="Role" Type="EsModel.Store.RoleSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRoles">
+        <PropertyRef Name="Role_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactAssigneeGroup">
+    <End Role="Contact" Type="EsModel.Store.ContactSet" Multiplicity="*" />
+    <End Role="AssigneeGroup" Type="EsModel.Store.AssigneeGroupSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="AssigneeGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="AssigneeGroup_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="IncidentIncidentType">
+    <End Role="Incident" Type="EsModel.Store.IncidentSet" Multiplicity="*" />
+    <End Role="IncidentType" Type="EsModel.Store.IncidentTypeSet" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="IncidentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Incident">
+        <PropertyRef Name="Type_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AssigneeGroupCompany">
+    <End Role="AssigneeGroup" Type="EsModel.Store.AssigneeGroupSet" Multiplicity="*" />
+    <End Role="Company" Type="EsModel.Store.CompanySet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AssigneeGroup">
+        <PropertyRef Name="Company_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

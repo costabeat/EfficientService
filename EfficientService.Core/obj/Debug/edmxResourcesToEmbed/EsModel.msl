@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EsModelStoreContainer" CdmEntityContainer="EsDataContext">
+    <EntitySetMapping Name="IncidentSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.Incident)">
+        <MappingFragment StoreEntitySet="IncidentSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ReportedDate" ColumnName="ReportedDate" />
+          <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+          <ScalarProperty Name="ResolveDate" ColumnName="ResolveDate" />
+          <ScalarProperty Name="Contract" ColumnName="Contract" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContactSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.Contact)">
+        <MappingFragment StoreEntitySet="ContactSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Jabber" ColumnName="Jabber" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AssigneeGroupSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.AssigneeGroup)">
+        <MappingFragment StoreEntitySet="AssigneeGroupSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.User)">
+        <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+          <ScalarProperty Name="LastPassChangeDate" ColumnName="LastPassChangeDate" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+          <ScalarProperty Name="LastLockedOutDate" ColumnName="LastLockedOutDate" />
+          <ScalarProperty Name="FailedPassAttemptCount" ColumnName="FailedPassAttemptCount" />
+          <ScalarProperty Name="FailedPassAttemptDate" ColumnName="FailedPassAttemptDate" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanySet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.Company)">
+        <MappingFragment StoreEntitySet="CompanySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArticleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.Article)">
+        <MappingFragment StoreEntitySet="ArticleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Problem" ColumnName="Problem" />
+          <ScalarProperty Name="Solution" ColumnName="Solution" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArticleCategorySet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.ArticleCategory)">
+        <MappingFragment StoreEntitySet="ArticleCategorySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoleSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.Role)">
+        <MappingFragment StoreEntitySet="RoleSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRolesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.UserRoles)">
+        <MappingFragment StoreEntitySet="UserRolesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncidentTypeSet">
+      <EntityTypeMapping TypeName="IsTypeOf(EfficientService.Core.IncidentType)">
+        <MappingFragment StoreEntitySet="IncidentTypeSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Difficulty" ColumnName="Difficulty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="IncidentContact" TypeName="EfficientService.Core.IncidentContact" StoreEntitySet="IncidentSet">
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="Id" ColumnName="Customer_Id" />
+      </EndProperty>
+      <EndProperty Name="Incident">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="IncidentContact1" TypeName="EfficientService.Core.IncidentContact1" StoreEntitySet="IncidentSet">
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="Id" ColumnName="Assignee_Id" />
+      </EndProperty>
+      <EndProperty Name="Incident">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Assignee_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="IncidentAssigneeGroup" TypeName="EfficientService.Core.IncidentAssigneeGroup" StoreEntitySet="IncidentSet">
+      <EndProperty Name="AssigneeGroup">
+        <ScalarProperty Name="Id" ColumnName="AssigneeGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Incident">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="AssigneeGroup_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserContact" TypeName="EfficientService.Core.UserContact" StoreEntitySet="UserSet">
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="Id" ColumnName="Contact_Id" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Contact_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="IncidentArticle" TypeName="EfficientService.Core.IncidentArticle" StoreEntitySet="IncidentSet">
+      <EndProperty Name="Article">
+        <ScalarProperty Name="Id" ColumnName="AssociatedArticle_Id" />
+      </EndProperty>
+      <EndProperty Name="Incident">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="AssociatedArticle_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ArticleCategoryArticleCategory" TypeName="EfficientService.Core.ArticleCategoryArticleCategory" StoreEntitySet="ArticleCategorySet">
+      <EndProperty Name="ArticleCategory1">
+        <ScalarProperty Name="Id" ColumnName="ParentCategory_Id" />
+      </EndProperty>
+      <EndProperty Name="ArticleCategory">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ParentCategory_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ArticleArticleCategory" TypeName="EfficientService.Core.ArticleArticleCategory" StoreEntitySet="ArticleSet">
+      <EndProperty Name="ArticleCategory">
+        <ScalarProperty Name="Id" ColumnName="ArticleCategory_Id" />
+      </EndProperty>
+      <EndProperty Name="Article">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="ArticleCategory_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserRolesUser" TypeName="EfficientService.Core.UserRolesUser" StoreEntitySet="UserRolesSet">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="UserRoles">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="UserRolesRole" TypeName="EfficientService.Core.UserRolesRole" StoreEntitySet="UserRolesSet">
+      <EndProperty Name="Role">
+        <ScalarProperty Name="Id" ColumnName="Role_Id" />
+      </EndProperty>
+      <EndProperty Name="UserRoles">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ContactAssigneeGroup" TypeName="EfficientService.Core.ContactAssigneeGroup" StoreEntitySet="ContactSet">
+      <EndProperty Name="AssigneeGroup">
+        <ScalarProperty Name="Id" ColumnName="AssigneeGroup_Id" />
+      </EndProperty>
+      <EndProperty Name="Contact">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="IncidentIncidentType" TypeName="EfficientService.Core.IncidentIncidentType" StoreEntitySet="IncidentSet">
+      <EndProperty Name="IncidentType">
+        <ScalarProperty Name="Id" ColumnName="Type_Id" />
+      </EndProperty>
+      <EndProperty Name="Incident">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Type_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AssigneeGroupCompany" TypeName="EfficientService.Core.AssigneeGroupCompany" StoreEntitySet="AssigneeGroupSet">
+      <EndProperty Name="Company">
+        <ScalarProperty Name="Id" ColumnName="Company_Id" />
+      </EndProperty>
+      <EndProperty Name="AssigneeGroup">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

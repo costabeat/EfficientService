@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="TempModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="TempModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BookSet" EntityType="TempModel.Book" />
+    <EntitySet Name="AuthorSet" EntityType="TempModel.Author" />
+    <AssociationSet Name="BookAuthor" Association="TempModel.BookAuthor">
+      <End Role="Book" EntitySet="BookSet" />
+      <End Role="Author" EntitySet="AuthorSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" />
+    <Property Type="String" Name="ISDN" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="TempModel.BookAuthor" FromRole="Book" ToRole="Author" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="FirlstName" Nullable="false" />
+    <Property Type="String" Name="LastName" Nullable="false" />
+  </EntityType>
+  <Association Name="BookAuthor">
+    <End Type="TempModel.Book" Role="Book" Multiplicity="*" />
+    <End Type="TempModel.Author" Role="Author" Multiplicity="0..1" />
+  </Association>
+</Schema>

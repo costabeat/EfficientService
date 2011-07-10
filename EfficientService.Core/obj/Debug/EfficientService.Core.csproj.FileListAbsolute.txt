@@ -1,0 +1,11 @@
+C:\Users\COSTA\Desktop\EfficientService\EfficientService.Core\bin\Debug\EfficientService.Core.dll.config
+C:\Users\COSTA\Desktop\EfficientService\EfficientService.Core\bin\Debug\EfficientService.Core.dll
+C:\Users\COSTA\Desktop\EfficientService\EfficientService.Core\bin\Debug\EfficientService.Core.pdb
+C:\Users\COSTA\Desktop\EfficientService\EfficientService.Core\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\COSTA\Desktop\EfficientService\EfficientService.Core\obj\Debug\EfficientService.Core.dll
+C:\Users\COSTA\Desktop\EfficientService\EfficientService.Core\obj\Debug\EfficientService.Core.pdb
+D:\GitHub\EfficientService\EfficientService.Core\bin\Debug\EfficientService.Core.dll
+D:\GitHub\EfficientService\EfficientService.Core\bin\Debug\EfficientService.Core.pdb
+D:\GitHub\EfficientService\EfficientService.Core\obj\Debug\ResolveAssemblyReference.cache
+D:\GitHub\EfficientService\EfficientService.Core\obj\Debug\EfficientService.Core.dll
+D:\GitHub\EfficientService\EfficientService.Core\obj\Debug\EfficientService.Core.pdb

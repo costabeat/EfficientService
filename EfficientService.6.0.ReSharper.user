@@ -1,0 +1,96 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Article.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Category.cs" caret="80" fromTop="2" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Department.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Utils/f:Permissions.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:IncidentType.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:User.cs" caret="586" fromTop="16" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:EntityBase.cs" caret="138" fromTop="6" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="906" fromTop="19" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Mappings/f:IncidentMap.cs" caret="153" fromTop="6" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Article.cs" caret="311" fromTop="11" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Article.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Category.cs" caret="80" fromTop="2" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Department.cs" caret="490" fromTop="15" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Department.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="612" fromTop="15" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="941" fromTop="5" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:IncidentType.cs" caret="91" fromTop="7" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:IncidentType.cs" caret="0" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:User.cs" caret="13" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:User.cs" caret="598" fromTop="16" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:EntityBase.cs" caret="82" fromTop="4" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="940" fromTop="19" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Mappings/f:IncidentMap.cs" caret="134" fromTop="4" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="AspCodeCompletionContext">
+      <Item value="IncidentList" priority="6" />
+      <Item value="runat" priority="7" />
+      <Item value="server" priority="6" />
+    </ItemStatistics>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="new" priority="127" />
+      <Item value="EsDataContext" priority="58" />
+      <Item value="cw" priority="63" />
+      <Item value="ctx" priority="95" />
+      <Item value="string" priority="31" />
+      <Item value="Console`0" priority="63" />
+      <Item value="EntityConnection" priority="28" />
+      <Item value="con" priority="63" />
+      <Item value="protected" priority="31" />
+      <Item value="override" priority="31" />
+      <Item value="TempModelContainer`0" priority="31" />
+      <Item value="TempModelContainer" priority="28" />
+      <Item value="IEntity`0" priority="63" />
+      <Item value="public" priority="31" />
+      <Item value="virtual" priority="63" />
+      <Item value="GetHashCode`0" priority="63" />
+      <Item value="abstract" priority="30" />
+      <Item value="EntityBase`0" priority="31" />
+      <Item value="IncidentMap`0" priority="30" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EfficientService.EsDataContext">
+      <Item value="IncidentSet" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="ReadLine`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.EntityClient.EntityConnection">
+      <Item value="Site" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EfficientService.Core.EsDataContext">
+      <Item value="IncidentSet" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Data.Objects.ObjectSet`1">
+      <Item value="Count`1" priority="27" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EfficientService.Core.TempModelContainer">
+      <Item value="BookSet" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

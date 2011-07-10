@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="EsDataContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IncidentSet" EntityType="EsModel.Incident" />
+    <EntitySet Name="ContactSet" EntityType="EsModel.Contact" />
+    <AssociationSet Name="IncidentContact" Association="EsModel.IncidentContact">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <AssociationSet Name="IncidentContact1" Association="EsModel.IncidentContact1">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <EntitySet Name="AssigneeGroupSet" EntityType="EsModel.AssigneeGroup" />
+    <AssociationSet Name="IncidentAssigneeGroup" Association="EsModel.IncidentAssigneeGroup">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="AssigneeGroup" EntitySet="AssigneeGroupSet" />
+    </AssociationSet>
+    <EntitySet Name="UserSet" EntityType="EsModel.User" />
+    <EntitySet Name="CompanySet" EntityType="EsModel.Company" />
+    <AssociationSet Name="UserContact" Association="EsModel.UserContact">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Contact" EntitySet="ContactSet" />
+    </AssociationSet>
+    <EntitySet Name="ArticleSet" EntityType="EsModel.Article" />
+    <AssociationSet Name="IncidentArticle" Association="EsModel.IncidentArticle">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="Article" EntitySet="ArticleSet" />
+    </AssociationSet>
+    <EntitySet Name="ArticleCategorySet" EntityType="EsModel.ArticleCategory" />
+    <AssociationSet Name="ArticleCategoryArticleCategory" Association="EsModel.ArticleCategoryArticleCategory">
+      <End Role="ArticleCategory" EntitySet="ArticleCategorySet" />
+      <End Role="ArticleCategory1" EntitySet="ArticleCategorySet" />
+    </AssociationSet>
+    <AssociationSet Name="ArticleArticleCategory" Association="EsModel.ArticleArticleCategory">
+      <End Role="Article" EntitySet="ArticleSet" />
+      <End Role="ArticleCategory" EntitySet="ArticleCategorySet" />
+    </AssociationSet>
+    <EntitySet Name="RoleSet" EntityType="EsModel.Role" />
+    <EntitySet Name="UserRolesSet" EntityType="EsModel.UserRoles" />
+    <AssociationSet Name="UserRolesUser" Association="EsModel.UserRolesUser">
+      <End Role="UserRoles" EntitySet="UserRolesSet" />
+      <End Role="User" EntitySet="UserSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserRolesRole" Association="EsModel.UserRolesRole">
+      <End Role="UserRoles" EntitySet="UserRolesSet" />
+      <End Role="Role" EntitySet="RoleSet" />
+    </AssociationSet>
+    <AssociationSet Name="ContactAssigneeGroup" Association="EsModel.ContactAssigneeGroup">
+      <End Role="Contact" EntitySet="ContactSet" />
+      <End Role="AssigneeGroup" EntitySet="AssigneeGroupSet" />
+    </AssociationSet>
+    <EntitySet Name="IncidentTypeSet" EntityType="EsModel.IncidentType" />
+    <AssociationSet Name="IncidentIncidentType" Association="EsModel.IncidentIncidentType">
+      <End Role="Incident" EntitySet="IncidentSet" />
+      <End Role="IncidentType" EntitySet="IncidentTypeSet" />
+    </AssociationSet>
+    <AssociationSet Name="AssigneeGroupCompany" Association="EsModel.AssigneeGroupCompany">
+      <End Role="AssigneeGroup" EntitySet="AssigneeGroupSet" />
+      <End Role="Company" EntitySet="CompanySet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Incident">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" />
+    <NavigationProperty Name="Customer" Relationship="EsModel.IncidentContact" FromRole="Incident" ToRole="Contact" />
+    <NavigationProperty Name="Assignee" Relationship="EsModel.IncidentContact1" FromRole="Incident" ToRole="Contact" />
+    <NavigationProperty Name="AssigneeGroup" Relationship="EsModel.IncidentAssigneeGroup" FromRole="Incident" ToRole="AssigneeGroup" />
+    <Property Type="Int32" Name="Priority" Nullable="false" DefaultValue="0" />
+    <Property Type="Int32" Name="Status" Nullable="false" DefaultValue="2" />
+    <Property Type="DateTime" Name="ReportedDate" Nullable="false" />
+    <Property Type="DateTime" Name="LastChangeDate" Nullable="false" />
+    <Property Type="DateTime" Name="ResolveDate" Nullable="true" />
+    <NavigationProperty Name="AssociatedArticle" Relationship="EsModel.IncidentArticle" FromRole="Incident" ToRole="Article" />
+    <Property Type="String" Name="Contract" Nullable="true" MaxLength="Max" />
+    <Property Type="Decimal" Name="Cost" Nullable="false" DefaultValue="0" />
+    <Property Type="String" Name="Comment" Nullable="true" MaxLength="Max" />
+    <Property Type="DateTime" Name="TargetDate" Nullable="true" />
+    <NavigationProperty Name="Type" Relationship="EsModel.IncidentIncidentType" FromRole="Incident" ToRole="IncidentType" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="FullName" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" MaxLength="128" Nullable="true" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Jabber" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="Post" Nullable="true" MaxLength="50" />
+    <NavigationProperty Name="AssigneeGroup" Relationship="EsModel.ContactAssigneeGroup" FromRole="Contact" ToRole="AssigneeGroup" />
+  </EntityType>
+  <Association Name="IncidentContact">
+    <End Type="EsModel.Incident" Role="Incident" Multiplicity="*" />
+    <End Type="EsModel.Contact" Role="Contact" Multiplicity="1" />
+  </Association>
+  <Association Name="IncidentContact1">
+    <End Type="EsModel.Incident" Role="Incident" Multiplicity="*" />
+    <End Type="EsModel.Contact" Role="Contact" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="AssigneeGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" />
+    <NavigationProperty Name="Company" Relationship="EsModel.AssigneeGroupCompany" FromRole="AssigneeGroup" ToRole="Company" />
+  </EntityType>
+  <Association Name="IncidentAssigneeGroup">
+    <End Type="EsModel.Incident" Role="Incident" Multiplicity="*" />
+    <End Type="EsModel.AssigneeGroup" Role="AssigneeGroup" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Guid" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <NavigationProperty Name="Contact" Relationship="EsModel.UserContact" FromRole="User" ToRole="Contact" />
+    <Property Type="String" Name="Username" Nullable="false" MaxLength="Max" />
+    <Property Type="DateTime" Name="LastLoginDate" Nullable="false" />
+    <Property Type="DateTime" Name="LastPassChangeDate" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="Boolean" Name="IsLockedOut" Nullable="false" DefaultValue="false" />
+    <Property Type="DateTime" Name="LastLockedOutDate" Nullable="false" />
+    <Property Type="Int32" Name="FailedPassAttemptCount" Nullable="false" DefaultValue="0" />
+    <Property Type="DateTime" Name="FailedPassAttemptDate" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Name" Nullable="false" />
+  </EntityType>
+  <Association Name="UserContact">
+    <End Type="EsModel.User" Role="User" Multiplicity="*" />
+    <End Type="EsModel.Contact" Role="Contact" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Problem" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="Solution" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="Tags" Nullable="true" MaxLength="50" />
+    <NavigationProperty Name="ArticleCategory" Relationship="EsModel.ArticleArticleCategory" FromRole="Article" ToRole="ArticleCategory" />
+  </EntityType>
+  <Association Name="IncidentArticle">
+    <End Type="EsModel.Incident" Role="Incident" Multiplicity="*" />
+    <End Type="EsModel.Article" Role="Article" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="ArticleCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <NavigationProperty Name="ParentCategory" Relationship="EsModel.ArticleCategoryArticleCategory" FromRole="ArticleCategory" ToRole="ArticleCategory1" />
+  </EntityType>
+  <Association Name="ArticleCategoryArticleCategory">
+    <End Type="EsModel.ArticleCategory" Role="ArticleCategory" Multiplicity="*" />
+    <End Type="EsModel.ArticleCategory" Role="ArticleCategory1" Multiplicity="0..1" />
+  </Association>
+  <Association Name="ArticleArticleCategory">
+    <End Type="EsModel.Article" Role="Article" Multiplicity="*" />
+    <End Type="EsModel.ArticleCategory" Role="ArticleCategory" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <NavigationProperty Name="User" Relationship="EsModel.UserRolesUser" FromRole="UserRoles" ToRole="User" />
+    <NavigationProperty Name="Role" Relationship="EsModel.UserRolesRole" FromRole="UserRoles" ToRole="Role" />
+  </EntityType>
+  <Association Name="UserRolesUser">
+    <End Type="EsModel.UserRoles" Role="UserRoles" Multiplicity="*" />
+    <End Type="EsModel.User" Role="User" Multiplicity="1" />
+  </Association>
+  <Association Name="UserRolesRole">
+    <End Type="EsModel.UserRoles" Role="UserRoles" Multiplicity="*" />
+    <End Type="EsModel.Role" Role="Role" Multiplicity="1" />
+  </Association>
+  <Association Name="ContactAssigneeGroup">
+    <End Type="EsModel.Contact" Role="Contact" Multiplicity="*" />
+    <End Type="EsModel.AssigneeGroup" Role="AssigneeGroup" Multiplicity="1" />
+  </Association>
+  <EntityType Name="IncidentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" cg:SetterAccess="Public" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Difficulty" Nullable="false" DefaultValue="100" />
+  </EntityType>
+  <Association Name="IncidentIncidentType">
+    <End Type="EsModel.Incident" Role="Incident" Multiplicity="*" />
+    <End Type="EsModel.IncidentType" Role="IncidentType" Multiplicity="0..1" />
+  </Association>
+  <Association Name="AssigneeGroupCompany">
+    <End Type="EsModel.AssigneeGroup" Role="AssigneeGroup" Multiplicity="*" />
+    <End Type="EsModel.Company" Role="Company" Multiplicity="1" />
+  </Association>
+</Schema>
