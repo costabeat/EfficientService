@@ -8,8 +8,14 @@
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:IncidentType.cs" caret="0" fromTop="0" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:User.cs" caret="586" fromTop="16" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:EntityBase.cs" caret="138" fromTop="6" />
-      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="906" fromTop="19" />
-      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Mappings/f:IncidentMap.cs" caret="153" fromTop="6" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:EsNotifyException.cs" caret="89" fromTop="2" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:INotifier.cs" caret="40" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:NotifyManager.cs" caret="96" fromTop="3" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:JabberNotifier.cs" caret="398" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Infrastructure/f:EsSettings.cs" caret="372" fromTop="10" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Infrastructure/f:EsException.cs" caret="115" fromTop="4" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="464" fromTop="12" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Mappings/f:IncidentMap.cs" caret="465" fromTop="13" />
     </RecentFiles>
     <RecentEdits>
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Article.cs" caret="311" fromTop="11" />
@@ -17,16 +23,25 @@
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Category.cs" caret="80" fromTop="2" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Department.cs" caret="490" fromTop="15" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Department.cs" caret="0" fromTop="0" />
-      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="612" fromTop="15" />
-      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="941" fromTop="5" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="938" fromTop="5" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="0" fromTop="0" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:IncidentType.cs" caret="91" fromTop="7" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:IncidentType.cs" caret="0" fromTop="0" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:User.cs" caret="13" fromTop="0" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:User.cs" caret="598" fromTop="16" />
       <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:EntityBase.cs" caret="82" fromTop="4" />
-      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="940" fromTop="19" />
-      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Mappings/f:IncidentMap.cs" caret="134" fromTop="4" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="937" fromTop="19" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="848" fromTop="18" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Entities/f:Incident.cs" caret="403" fromTop="11" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Mappings/f:IncidentMap.cs" caret="361" fromTop="11" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:EsNotifyException.cs" caret="100" fromTop="3" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:INotifier.cs" caret="40" fromTop="0" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:JabberNotifier.cs" caret="2004" fromTop="68" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:NotifyManager.cs" caret="96" fromTop="3" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Infrastructure/f:EsException.cs" caret="0" fromTop="2" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Infrastructure/f:EsSettings.cs" caret="282" fromTop="8" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Infrastructure/f:EsSettings.cs" caret="372" fromTop="10" />
+      <File id="C2033AB4-04D0-492C-AA3A-9FCAFEEDD6E5/d:Notifier/f:JabberNotifier.cs" caret="0" fromTop="0" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
@@ -45,16 +60,25 @@
       <Item value="EntityConnection" priority="28" />
       <Item value="con" priority="63" />
       <Item value="protected" priority="31" />
-      <Item value="override" priority="31" />
+      <Item value="override" priority="63" />
       <Item value="TempModelContainer`0" priority="31" />
       <Item value="TempModelContainer" priority="28" />
       <Item value="IEntity`0" priority="63" />
-      <Item value="public" priority="31" />
+      <Item value="public" priority="90" />
       <Item value="virtual" priority="63" />
       <Item value="GetHashCode`0" priority="63" />
       <Item value="abstract" priority="30" />
       <Item value="EntityBase`0" priority="31" />
-      <Item value="IncidentMap`0" priority="30" />
+      <Item value="IncidentMap`0" priority="62" />
+      <Item value="Map`0" priority="95" />
+      <Item value="x" priority="127" />
+      <Item value="this" priority="31" />
+      <Item value="References`1" priority="31" />
+      <Item value="bool" priority="31" />
+      <Item value="return" priority="31" />
+      <Item value="Configuration`0" priority="31" />
+      <Item value="ConfigurationManager`0" priority="31" />
+      <Item value="value" priority="31" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:EfficientService.EsDataContext">
       <Item value="IncidentSet" priority="26" />
@@ -73,6 +97,37 @@
     </ItemStatistics>
     <ItemStatistics item="Qualified:EfficientService.Core.TempModelContainer">
       <Item value="BookSet" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EfficientService.Core.Entities.Incident">
+      <Item value="UID" priority="26" />
+      <Item value="Title" priority="26" />
+      <Item value="Description" priority="26" />
+      <Item value="Type" priority="26" />
+      <Item value="Creator" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.IdentityPart">
+      <Item value="GeneratedBy" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.IdentityGenerationStrategyBuilder`1">
+      <Item value="Guid`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.PropertyPart">
+      <Item value="Not" priority="53" />
+      <Item value="Nullable`0" priority="53" />
+      <Item value="Column`0" priority="53" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:EfficientService.Core.Mappings.IncidentMap">
+      <Item value="Table`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.ManyToOnePart`1">
+      <Item value="Column`0" priority="26" />
+      <Item value="Cascade" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:FluentNHibernate.Mapping.CascadeExpression`1">
+      <Item value="All`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Configuration.ConfigurationManager">
+      <Item value="AppSettings" priority="53" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>
